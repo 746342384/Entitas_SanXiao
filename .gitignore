@@ -1,0 +1,5 @@
+*.csproj
+*.sln
+*.properties
+*.user
+*.userproperties
