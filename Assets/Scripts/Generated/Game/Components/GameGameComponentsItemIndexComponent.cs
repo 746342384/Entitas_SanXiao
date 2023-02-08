@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Game.Components.ItemIndex gameComponentsItemIndex { get { return (Game.Components.ItemIndex)GetComponent(GameComponentsLookup.GameComponentsItemIndex); } }
+    public Game.Components.ItemIndexComponent gameComponentsItemIndex { get { return (Game.Components.ItemIndexComponent)GetComponent(GameComponentsLookup.GameComponentsItemIndex); } }
     public bool hasGameComponentsItemIndex { get { return HasComponent(GameComponentsLookup.GameComponentsItemIndex); } }
 
     public void AddGameComponentsItemIndex(CustomVector2 newVector2) {
         var index = GameComponentsLookup.GameComponentsItemIndex;
-        var component = (Game.Components.ItemIndex)CreateComponent(index, typeof(Game.Components.ItemIndex));
+        var component = (Game.Components.ItemIndexComponent)CreateComponent(index, typeof(Game.Components.ItemIndexComponent));
         component.Vector2 = newVector2;
         AddComponent(index, component);
     }
 
     public void ReplaceGameComponentsItemIndex(CustomVector2 newVector2) {
         var index = GameComponentsLookup.GameComponentsItemIndex;
-        var component = (Game.Components.ItemIndex)CreateComponent(index, typeof(Game.Components.ItemIndex));
+        var component = (Game.Components.ItemIndexComponent)CreateComponent(index, typeof(Game.Components.ItemIndexComponent));
         component.Vector2 = newVector2;
         ReplaceComponent(index, component);
     }

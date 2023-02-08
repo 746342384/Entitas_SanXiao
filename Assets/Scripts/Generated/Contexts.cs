@@ -68,7 +68,7 @@ public partial class Contexts {
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, CustomVector2>(
             GameComponentsItemIndex,
             game.GetGroup(GameMatcher.GameComponentsItemIndex),
-            (e, c) => ((Game.Components.ItemIndex)c).Vector2));
+            (e, c) => ((Game.Components.ItemIndexComponent)c).Vector2));
 
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, string>(
             MultiReactiveName,

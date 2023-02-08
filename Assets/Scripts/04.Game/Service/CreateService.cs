@@ -22,12 +22,24 @@ namespace _04.Game.Service
             return entity;
         }
 
-        public void CreateBall()
+        public GameEntity CreateBall(CustomVector2 vector2, string path)
         {
+            var entity = _contexts.game.CreateEntity();
+            entity.isGameComponentsGameBoardItem = true;
+            entity.isGameComponentsMoveable = true;
+            entity.AddGameComponentsItemIndex(vector2);
+            entity.AddGameComponentsLoadPrefab(path);
+            return entity;
         }
 
-        public void CreateBloker()
+        public GameEntity CreateBloker(CustomVector2 vector2, string path)
         {
+            var entity = _contexts.game.CreateEntity();
+            entity.isGameComponentsGameBoardItem = true;
+            entity.isGameComponentsMoveable = false;
+            entity.AddGameComponentsItemIndex(vector2);
+            entity.AddGameComponentsLoadPrefab(path);
+            return entity;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _04.Game.Service;
 using Entitas;
+using Game.Const;
 using UnityEngine;
 
 namespace _04.Game.System
@@ -26,10 +27,6 @@ namespace _04.Game.System
 
         protected override void Execute(List<GameEntity> entities)
         {
-            var gameComponentsGameBoard = entities.SingleEntity().gameComponentsGameBoard;
-            foreach (var gameEntity in _itemEntity)
-            {
-            }
         }
 
         public void Initialize()
@@ -37,18 +34,17 @@ namespace _04.Game.System
             var gameBoard = CreateService.Instance.CreateGameBoard().gameComponentsGameBoard;
             var columns = gameBoard.columns;
             var rows = gameBoard.rows;
+            var customVector2 = new CustomVector2();
             for (var x = 0; x < columns; x++)
             {
                 for (var y = 0; y < rows; y++)
                 {
+                    customVector2.x = x;
+                    customVector2.y = y;
                     if (RandomBlocker())
-                    {
-                        CreateService.Instance.CreateBloker();
-                    }
+                        CreateService.Instance.CreateBloker(customVector2, ResPath.Blocker);
                     else
-                    {
-                        CreateService.Instance.CreateBall();
-                    }
+                        CreateService.Instance.CreateBall(customVector2, RandomPathService.Instance.RandomPath());
                 }
             }
         }

@@ -4,10 +4,9 @@ using UnityEngine;
 
 namespace _04.Game.Views
 {
-    public abstract class View : MonoBehaviour, IView
+    public abstract class View : MonoBehaviour, IView, IGameComponentsDestroyListener
     {
         protected GameEntity _gameEntity;
-        protected GameContext _gameContext;
 
         public virtual void Link(IEntity entity, IContext context)
         {
@@ -20,8 +19,13 @@ namespace _04.Game.Views
                 Debug.LogError("实体类型错误");
             }
 
-            _gameContext = context as GameContext;
+            _gameEntity.AddGameComponentsDestroyListener(this);
             gameObject.Link(entity);
+        }
+
+        public virtual void OnGameComponentsDestroy(GameEntity entity)
+        {
+            gameObject.Unlink();
         }
     }
 }

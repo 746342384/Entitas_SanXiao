@@ -12,26 +12,34 @@ public static class GameComponentsLookup {
     public const int GameComponentsGameBoard = 1;
     public const int GameComponentsGameBoardItem = 2;
     public const int GameComponentsItemIndex = 3;
-    public const int GameComponentsItemIndexListener = 4;
-    public const int InterationExampleDirection = 5;
-    public const int InterationExampleMoveComplete = 6;
-    public const int InterationExampleMove = 7;
-    public const int InterationExamplePosition = 8;
-    public const int InterationExampleSprite = 9;
-    public const int InterationExampleView = 10;
-    public const int Log = 11;
-    public const int MultiReactiveDestroy = 12;
-    public const int MultiReactiveName = 13;
-    public const int MultiReactiveView = 14;
-    public const int MultiReactiveAnyNameListener = 15;
+    public const int GameComponentsLoadPrefab = 4;
+    public const int GameComponentsMoveable = 5;
+    public const int GameComponentsAnyLoadPrefabListener = 6;
+    public const int GameComponentsDestroyListener = 7;
+    public const int GameComponentsItemIndexListener = 8;
+    public const int InterationExampleDirection = 9;
+    public const int InterationExampleMoveComplete = 10;
+    public const int InterationExampleMove = 11;
+    public const int InterationExamplePosition = 12;
+    public const int InterationExampleSprite = 13;
+    public const int InterationExampleView = 14;
+    public const int Log = 15;
+    public const int MultiReactiveDestroy = 16;
+    public const int MultiReactiveName = 17;
+    public const int MultiReactiveView = 18;
+    public const int MultiReactiveAnyNameListener = 19;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "GameComponentsDestroy",
         "GameComponentsGameBoard",
         "GameComponentsGameBoardItem",
         "GameComponentsItemIndex",
+        "GameComponentsLoadPrefab",
+        "GameComponentsMoveable",
+        "GameComponentsAnyLoadPrefabListener",
+        "GameComponentsDestroyListener",
         "GameComponentsItemIndexListener",
         "InterationExampleDirection",
         "InterationExampleMoveComplete",
@@ -50,7 +58,11 @@ public static class GameComponentsLookup {
         typeof(Game.Components.DestroyComponent),
         typeof(Game.Components.GameBoardComponent),
         typeof(Game.Components.GameBoardItem),
-        typeof(Game.Components.ItemIndex),
+        typeof(Game.Components.ItemIndexComponent),
+        typeof(Game.Components.LoadPrefabComponent),
+        typeof(Game.Components.MoveableComponent),
+        typeof(GameComponentsAnyLoadPrefabListenerComponent),
+        typeof(GameComponentsDestroyListenerComponent),
         typeof(GameComponentsItemIndexListenerComponent),
         typeof(InterationExample.DirectionComponent),
         typeof(InterationExample.MoveCompleteComponent),
