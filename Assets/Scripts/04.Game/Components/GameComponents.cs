@@ -55,4 +55,9 @@ namespace Game.Components
     {
         public ExchangeState State;
     }
+
+    [Game]
+    public class ExchangeComplete : IComponent
+    {
+    }
 }

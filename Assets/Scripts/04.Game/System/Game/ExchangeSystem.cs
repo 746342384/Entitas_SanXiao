@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
 using Game.Const;
-using NotImplementedException = System.NotImplementedException;
 
 namespace _04.Game.System
 {

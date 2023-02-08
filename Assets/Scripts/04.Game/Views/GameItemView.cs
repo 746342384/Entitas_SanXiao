@@ -17,7 +17,10 @@ namespace _04.Game.Views
         public void OnGameComponentsItemIndex(GameEntity entity, CustomVector2 vector2)
         {
             transform.DOKill();
-            transform.DOMove(new Vector3(vector2.x, vector2.y, 0), 1f);
+            transform.DOMove(new Vector3(vector2.x, vector2.y, 0), 1f).OnComplete(() =>
+            {
+                _gameEntity.isGameComponentsExchangeComplete = true;
+            });
         }
 
         public override void OnGameComponentsDestroy(GameEntity entity)
