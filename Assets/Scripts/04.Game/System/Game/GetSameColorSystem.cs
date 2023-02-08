@@ -28,10 +28,12 @@ namespace Game.System
         {
             foreach (var gameEntity in entities)
             {
+                #if TestCode
                 Debug.Log($"Up:{JudgeUp(gameEntity).Count}");
                 Debug.Log($"Down:{JudgeDown(gameEntity).Count}");
                 Debug.Log($"Left:{JudgeLeft(gameEntity).Count}");
                 Debug.Log($"Right:{JudgeRight(gameEntity).Count}");
+                #endif
                 gameEntity.isGameComponentsGetSameColor = false;
             }
         }

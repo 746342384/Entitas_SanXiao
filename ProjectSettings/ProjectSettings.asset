@@ -165,7 +165,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.Entitas-SanXiao
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -632,7 +633,7 @@ PlayerSettings:
     PS4: ENTITAS_FAST_AND_UNSAFE
     PS5: ENTITAS_FAST_AND_UNSAFE
     Stadia: ENTITAS_FAST_AND_UNSAFE
-    Standalone: ENTITAS_FAST_AND_UNSAFE
+    Standalone: ENTITAS_FAST_AND_UNSAFE;TestCode
     WebGL: ENTITAS_FAST_AND_UNSAFE
     Windows Store Apps: ENTITAS_FAST_AND_UNSAFE
     XboxOne: ENTITAS_FAST_AND_UNSAFE
