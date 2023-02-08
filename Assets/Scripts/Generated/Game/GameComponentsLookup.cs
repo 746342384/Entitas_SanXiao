@@ -8,21 +8,31 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int InterationExampleDirection = 0;
-    public const int InterationExampleMoveComplete = 1;
-    public const int InterationExampleMove = 2;
-    public const int InterationExamplePosition = 3;
-    public const int InterationExampleSprite = 4;
-    public const int InterationExampleView = 5;
-    public const int Log = 6;
-    public const int MultiReactiveDestroy = 7;
-    public const int MultiReactiveName = 8;
-    public const int MultiReactiveView = 9;
-    public const int MultiReactiveAnyNameListener = 10;
+    public const int GameComponentsDestroy = 0;
+    public const int GameComponentsGameBoard = 1;
+    public const int GameComponentsGameBoardItem = 2;
+    public const int GameComponentsItemIndex = 3;
+    public const int GameComponentsItemIndexListener = 4;
+    public const int InterationExampleDirection = 5;
+    public const int InterationExampleMoveComplete = 6;
+    public const int InterationExampleMove = 7;
+    public const int InterationExamplePosition = 8;
+    public const int InterationExampleSprite = 9;
+    public const int InterationExampleView = 10;
+    public const int Log = 11;
+    public const int MultiReactiveDestroy = 12;
+    public const int MultiReactiveName = 13;
+    public const int MultiReactiveView = 14;
+    public const int MultiReactiveAnyNameListener = 15;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
+        "GameComponentsDestroy",
+        "GameComponentsGameBoard",
+        "GameComponentsGameBoardItem",
+        "GameComponentsItemIndex",
+        "GameComponentsItemIndexListener",
         "InterationExampleDirection",
         "InterationExampleMoveComplete",
         "InterationExampleMove",
@@ -37,6 +47,11 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Game.Components.DestroyComponent),
+        typeof(Game.Components.GameBoardComponent),
+        typeof(Game.Components.GameBoardItem),
+        typeof(Game.Components.ItemIndex),
+        typeof(GameComponentsItemIndexListenerComponent),
         typeof(InterationExample.DirectionComponent),
         typeof(InterationExample.MoveCompleteComponent),
         typeof(InterationExample.MoveComponent),

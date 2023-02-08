@@ -9,6 +9,7 @@
 public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
+        Add(new GameComponentsItemIndexEventSystem(contexts)); // priority: 0
         Add(new MultiReactiveAnyNameEventSystem(contexts)); // priority: 0
     }
 }

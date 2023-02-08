@@ -60,10 +60,16 @@ public partial class Contexts : Entitas.IContexts {
 //------------------------------------------------------------------------------
 public partial class Contexts {
 
+    public const string GameComponentsItemIndex = "GameComponentsItemIndex";
     public const string MultiReactiveName = "MultiReactiveName";
 
     [Entitas.CodeGeneration.Attributes.PostConstructor]
     public void InitializeEntityIndices() {
+        game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, CustomVector2>(
+            GameComponentsItemIndex,
+            game.GetGroup(GameMatcher.GameComponentsItemIndex),
+            (e, c) => ((Game.Components.ItemIndex)c).Vector2));
+
         game.AddEntityIndex(new Entitas.EntityIndex<GameEntity, string>(
             MultiReactiveName,
             game.GetGroup(GameMatcher.MultiReactiveName),
@@ -72,6 +78,10 @@ public partial class Contexts {
 }
 
 public static class ContextsExtensions {
+
+    public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithGameComponentsItemIndex(this GameContext context, CustomVector2 Vector2) {
+        return ((Entitas.EntityIndex<GameEntity, CustomVector2>)context.GetEntityIndex(Contexts.GameComponentsItemIndex)).GetEntities(Vector2);
+    }
 
     public static System.Collections.Generic.HashSet<GameEntity> GetEntitiesWithMultiReactiveName(this GameContext context, string name) {
         return ((Entitas.EntityIndex<GameEntity, string>)context.GetEntityIndex(Contexts.MultiReactiveName)).GetEntities(name);
