@@ -60,4 +60,9 @@ namespace Game.Components
     public class ExchangeComplete : IComponent
     {
     }
+
+    [Game]
+    public class GetSameColor : IComponent
+    {
+    }
 }

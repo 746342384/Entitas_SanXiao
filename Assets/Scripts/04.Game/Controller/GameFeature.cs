@@ -1,5 +1,6 @@
 using _04.Game.System;
 using Entitas;
+using Game.System;
 
 namespace _04.Game.Controller
 {
@@ -9,6 +10,8 @@ namespace _04.Game.Controller
         {
             Add(new GameBoardSystem(contexts));
             Add(new ExchangeSystem(contexts));
+            Add(new MoveCompleteSystem(contexts));
+            Add(new GetSameColorSystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)

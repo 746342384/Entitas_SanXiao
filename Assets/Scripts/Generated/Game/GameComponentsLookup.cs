@@ -13,25 +13,26 @@ public static class GameComponentsLookup {
     public const int GameComponentsExchangeComponemt = 2;
     public const int GameComponentsGameBoard = 3;
     public const int GameComponentsGameBoardItem = 4;
-    public const int GameComponentsItemIndex = 5;
-    public const int GameComponentsLoadPrefab = 6;
-    public const int GameComponentsMoveable = 7;
-    public const int GameComponentsAnyLoadPrefabListener = 8;
-    public const int GameComponentsDestroyListener = 9;
-    public const int GameComponentsItemIndexListener = 10;
-    public const int InterationExampleDirection = 11;
-    public const int InterationExampleMoveComplete = 12;
-    public const int InterationExampleMove = 13;
-    public const int InterationExamplePosition = 14;
-    public const int InterationExampleSprite = 15;
-    public const int InterationExampleView = 16;
-    public const int Log = 17;
-    public const int MultiReactiveDestroy = 18;
-    public const int MultiReactiveName = 19;
-    public const int MultiReactiveView = 20;
-    public const int MultiReactiveAnyNameListener = 21;
+    public const int GameComponentsGetSameColor = 5;
+    public const int GameComponentsItemIndex = 6;
+    public const int GameComponentsLoadPrefab = 7;
+    public const int GameComponentsMoveable = 8;
+    public const int GameComponentsAnyLoadPrefabListener = 9;
+    public const int GameComponentsDestroyListener = 10;
+    public const int GameComponentsItemIndexListener = 11;
+    public const int InterationExampleDirection = 12;
+    public const int InterationExampleMoveComplete = 13;
+    public const int InterationExampleMove = 14;
+    public const int InterationExamplePosition = 15;
+    public const int InterationExampleSprite = 16;
+    public const int InterationExampleView = 17;
+    public const int Log = 18;
+    public const int MultiReactiveDestroy = 19;
+    public const int MultiReactiveName = 20;
+    public const int MultiReactiveView = 21;
+    public const int MultiReactiveAnyNameListener = 22;
 
-    public const int TotalComponents = 22;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "GameComponentsDestroy",
@@ -39,6 +40,7 @@ public static class GameComponentsLookup {
         "GameComponentsExchangeComponemt",
         "GameComponentsGameBoard",
         "GameComponentsGameBoardItem",
+        "GameComponentsGetSameColor",
         "GameComponentsItemIndex",
         "GameComponentsLoadPrefab",
         "GameComponentsMoveable",
@@ -64,6 +66,7 @@ public static class GameComponentsLookup {
         typeof(Game.Components.ExchangeComponemt),
         typeof(Game.Components.GameBoardComponent),
         typeof(Game.Components.GameBoardItem),
+        typeof(Game.Components.GetSameColor),
         typeof(Game.Components.ItemIndexComponent),
         typeof(Game.Components.LoadPrefabComponent),
         typeof(Game.Components.MoveableComponent),
