@@ -1,5 +1,6 @@
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using Game.Const;
 
 namespace Game.Components
 {
@@ -9,14 +10,7 @@ namespace Game.Components
     [Game, Unique]
     public class GameBoardComponent : IComponent
     {
-        /// <summary>
-        /// 列
-        /// </summary>
         public int columns;
-
-        /// <summary>
-        /// 行
-        /// </summary>
         public int rows;
     }
 
@@ -54,5 +48,11 @@ namespace Game.Components
     [Game]
     public class MoveableComponent : IComponent
     {
+    }
+
+    [Game]
+    public class ExchangeComponemt : IComponent
+    {
+        public ExchangeState State;
     }
 }

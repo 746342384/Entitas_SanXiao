@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _04.Game.Components;
 using Entitas;
+using Game.Const;
 using UnityEngine;
 
 namespace Game.System
@@ -50,11 +51,21 @@ namespace Game.System
                         click.y == _lastComponent.y - 1 && click.x == _lastComponent.x ||
                         click.y == _lastComponent.y + 1 && click.x == _lastComponent.x)
                     {
-                        //todo 交换
-                        Debug.Log($"******");
+                        ReplaceExchange(click);
+                        ReplaceExchange(_lastComponent);
                         _lastComponent = null;
                     }
                 }
+            }
+        }
+
+        private void ReplaceExchange(ClickComponent clickComponent)
+        {
+            var customVector2 = new CustomVector2(clickComponent.x, clickComponent.y);
+            var entities = _context.game.GetEntitiesWithGameComponentsItemIndex(customVector2);
+            foreach (var gameEntity in entities)
+            {
+                gameEntity.ReplaceGameComponentsExchangeComponemt(ExchangeState.START);
             }
         }
     }

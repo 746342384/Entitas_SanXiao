@@ -8,6 +8,7 @@ namespace _04.Game.Controller
         public GameFeature(Contexts contexts)
         {
             Add(new GameBoardSystem(contexts));
+            Add(new ExchangeSystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)
