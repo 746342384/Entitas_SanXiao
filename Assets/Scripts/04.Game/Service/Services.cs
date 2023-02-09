@@ -8,6 +8,7 @@ namespace _04.Game.Service
         {
             LoadPrefabService.Instance.Init(contexts, parent);
             CreateService.Instance.Init(contexts);
+            GetEmptyItemService.Instance.Init(contexts);
         }
     }
 }

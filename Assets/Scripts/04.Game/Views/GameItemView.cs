@@ -16,7 +16,7 @@ namespace _04.Game.Views
 
         public void OnGameComponentsItemIndex(GameEntity entity, CustomVector2 vector2)
         {
-            transform.DOMove(new Vector3(vector2.x, vector2.y, 0), 1f).OnComplete(() =>
+            transform.DOMove(new Vector3(vector2.x, vector2.y, 0), 0.5f).OnComplete(() =>
             {
                 _gameEntity.isGameComponentsExchangeComplete = true;
             });

@@ -1,4 +1,5 @@
 using _04.Game.System;
+using _04.Game.System.Game;
 using Entitas;
 using Game.System;
 using Game.System.Game;
@@ -16,6 +17,9 @@ namespace Game.Controller
             Add(new JudgeSameColorSystem(contexts));
             Add(new EliminateSystem(contexts));
             Add(new ExchangeBackSystem(contexts));
+            Add(new FillSystem(contexts));
+            Add(new FallSystem(contexts));
+            Add(new DestroySystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)
