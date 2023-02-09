@@ -1,7 +1,7 @@
 using Entitas;
 using Game.System;
 
-namespace _04.Game.Controller
+namespace Game.Controller
 {
     public class InputFeature : Feature
     {

@@ -1,8 +1,9 @@
 using _04.Game.System;
 using Entitas;
 using Game.System;
+using Game.System.Game;
 
-namespace _04.Game.Controller
+namespace Game.Controller
 {
     public class GameFeature : Feature
     {
@@ -12,6 +13,9 @@ namespace _04.Game.Controller
             Add(new ExchangeSystem(contexts));
             Add(new MoveCompleteSystem(contexts));
             Add(new GetSameColorSystem(contexts));
+            Add(new JudgeSameColorSystem(contexts));
+            Add(new EliminateSystem(contexts));
+            Add(new ExchangeBackSystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entitas;
-using NotImplementedException = System.NotImplementedException;
 
 namespace _04.Game.System
 {

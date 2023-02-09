@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Entitas;
 using Entitas.CodeGeneration.Attributes;
 using Game.Const;
@@ -64,5 +65,28 @@ namespace Game.Components
     [Game]
     public class GetSameColor : IComponent
     {
+    }
+
+    [Game]
+    public class DetectionSameItem : IComponent
+    {
+        public List<IEntity> UpEntities;
+        public List<IEntity> DownEntities;
+        public List<IEntity> LeftEntities;
+        public List<IEntity> RightEntities;
+    }
+
+    [Game]
+    public class JudgeFormation : IComponent
+    {
+    }
+
+    /// <summary>
+    /// 标记是否能消除元素
+    /// </summary>
+    [Game]
+    public class Eliminate : IComponent
+    {
+        public bool canEliminate;
     }
 }

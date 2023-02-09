@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Entitas;
-using UnityEngine;
 
 namespace Game.System
 {
@@ -28,12 +27,11 @@ namespace Game.System
         {
             foreach (var gameEntity in entities)
             {
-                #if TestCode
-                Debug.Log($"Up:{JudgeUp(gameEntity).Count}");
-                Debug.Log($"Down:{JudgeDown(gameEntity).Count}");
-                Debug.Log($"Left:{JudgeLeft(gameEntity).Count}");
-                Debug.Log($"Right:{JudgeRight(gameEntity).Count}");
-                #endif
+                var judgeUp = JudgeUp(gameEntity);
+                var judgeDown = JudgeDown(gameEntity);
+                var judgeLeft = JudgeLeft(gameEntity);
+                var judgeRight = JudgeRight(gameEntity);
+                gameEntity.ReplaceGameComponentsDetectionSameItem(judgeUp, judgeDown, judgeLeft, judgeRight);
                 gameEntity.isGameComponentsGetSameColor = false;
             }
         }
@@ -44,7 +42,7 @@ namespace Game.System
             var sameEntities = new List<IEntity>();
             for (var i = pos.x - 1; i >= 0; i--)
             {
-                AddSameColorItem(entity, i, pos.y, sameEntities);
+                if (!AddSameColorItem(entity, i, pos.y, sameEntities)) break;
             }
 
             return sameEntities;
@@ -56,7 +54,7 @@ namespace Game.System
             var sameEntities = new List<IEntity>();
             for (var i = pos.x + 1; i < _context.game.gameComponentsGameBoard.columns; i++)
             {
-                AddSameColorItem(entity, i, pos.y, sameEntities);
+                if (!AddSameColorItem(entity, i, pos.y, sameEntities)) break;
             }
 
             return sameEntities;
@@ -68,7 +66,7 @@ namespace Game.System
             var sameEntities = new List<IEntity>();
             for (var i = pos.y + 1; i < _context.game.gameComponentsGameBoard.rows; i++)
             {
-                AddSameColorItem(entity, pos.x, i, sameEntities);
+                if (!AddSameColorItem(entity, pos.x, i, sameEntities)) break;
             }
 
             return sameEntities;
@@ -80,7 +78,7 @@ namespace Game.System
             var sameEntities = new List<IEntity>();
             for (var i = pos.y - 1; i >= 0; i--)
             {
-                AddSameColorItem(entity, pos.x, i, sameEntities);
+                if (!AddSameColorItem(entity, pos.x, i, sameEntities)) break;
             }
 
             return sameEntities;

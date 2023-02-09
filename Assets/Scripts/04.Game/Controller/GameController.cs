@@ -1,9 +1,9 @@
-using System;
+using _02.InterationExample;
 using _04.Game.Service;
 using Entitas;
 using UnityEngine;
 
-namespace _04.Game.Controller
+namespace Game.Controller
 {
     public class GameController : MonoBehaviour
     {
