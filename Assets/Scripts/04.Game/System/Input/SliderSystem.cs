@@ -38,7 +38,6 @@ namespace Game.System
                 {
                     var nextPos = NextPos(inputEntity);
                     _context.input.Replace_04GameComponentsClick(nextPos.x, nextPos.y);
-                    Debug.Log(inputEntity._04GameComponentsSlide.Direction);
                 }
             }
         }

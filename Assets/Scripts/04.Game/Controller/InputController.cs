@@ -21,11 +21,17 @@ namespace _04.Game.Controller
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (Camera.main == null) return;
+                if (Camera.main == null)
+                {
+                    return;
+                }
+
                 var hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100);
-                if (hit.collider == null) return;
-                _position = hit.transform.position;
-                _inputContext.Replace_04GameComponentsClick((int)_position.x, (int)_position.y);
+                if (hit.collider != null)
+                {
+                    _position = hit.transform.position;
+                    _inputContext.Replace_04GameComponentsClick((int)_position.x, (int)_position.y);
+                }
 
                 _time = 0;
                 _offsetX = 0;
@@ -46,7 +52,7 @@ namespace _04.Game.Controller
                 }
             }
 
-            if (Input.GetMouseButtonUp(0) && _time is < 0.5f and > 0.1f)
+            if (Input.GetMouseButtonUp(0) && _time is < 0.5f and > 0.2f)
             {
                 Slider();
             }
@@ -56,9 +62,7 @@ namespace _04.Game.Controller
         {
             var direction = MathF.Abs(_offsetX) > Mathf.Abs(_offsetY)
                 ? _offsetX > 0 ? SlideDirection.RIGHT : SlideDirection.LEFT
-                : _offsetY > 0
-                    ? SlideDirection.UP
-                    : SlideDirection.DOWM;
+                : _offsetY > 0 ? SlideDirection.UP : SlideDirection.DOWM;
             var pos = new CustomVector2((int)_position.x, (int)_position.y);
             _inputContext.Replace_04GameComponentsSlide(pos, direction);
         }

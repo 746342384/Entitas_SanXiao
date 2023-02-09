@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using _04.Game.Components;
 using Entitas;
 using Game.Const;
+using UnityEngine;
 
 namespace Game.System
 {
@@ -41,10 +42,12 @@ namespace Game.System
             {
                 if (_lastComponent == null)
                 {
-                    _lastComponent = click;
+                    _lastComponent = new ClickComponent();
                 }
                 else
                 {
+                    Debug.Log($"click {click.x} {click.y}");
+                    Debug.Log($"lastComponent {_lastComponent.x} {_lastComponent.y}");
                     if (click.x == _lastComponent.x - 1 && click.y == _lastComponent.y ||
                         click.x == _lastComponent.x + 1 && click.y == _lastComponent.y ||
                         click.y == _lastComponent.y - 1 && click.x == _lastComponent.x ||
@@ -54,6 +57,12 @@ namespace Game.System
                         ReplaceExchange(_lastComponent);
                         _lastComponent = null;
                     }
+                }
+
+                if (_lastComponent != null)
+                {
+                    _lastComponent.x = click.x;
+                    _lastComponent.y = click.y;
                 }
             }
         }

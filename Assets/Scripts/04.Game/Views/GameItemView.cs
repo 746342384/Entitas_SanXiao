@@ -16,7 +16,6 @@ namespace _04.Game.Views
 
         public void OnGameComponentsItemIndex(GameEntity entity, CustomVector2 vector2)
         {
-            transform.DOKill();
             transform.DOMove(new Vector3(vector2.x, vector2.y, 0), 1f).OnComplete(() =>
             {
                 _gameEntity.isGameComponentsExchangeComplete = true;
@@ -27,7 +26,10 @@ namespace _04.Game.Views
         {
             base.OnGameComponentsDestroy(entity);
             transform.DOScale(Vector3.one * 1.5f, time);
-            transform.GetComponent<SpriteRenderer>().DOColor(Color.clear, time);
+            transform.GetComponent<SpriteRenderer>().DOColor(Color.clear, time).OnComplete(() =>
+            {
+                Destroy(gameObject);
+            });
         }
     }
 }
