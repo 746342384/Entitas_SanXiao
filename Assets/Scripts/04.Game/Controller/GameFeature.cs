@@ -17,9 +17,9 @@ namespace Game.Controller
             Add(new JudgeSameColorSystem(contexts));
             Add(new EliminateSystem(contexts));
             Add(new ExchangeBackSystem(contexts));
-            Add(new FillSystem(contexts));
             Add(new FallSystem(contexts));
             Add(new DestroySystem(contexts));
+            Add(new FillSystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)

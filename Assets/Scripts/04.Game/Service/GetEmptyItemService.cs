@@ -19,8 +19,8 @@ namespace _04.Game.Service
             for (var i = vector2.y - 1; i >= 0; i--)
             {
                 var customVector2 = new CustomVector2(vector2.x, i);
-                var entity = _contexts.game.GetEntitiesWithGameComponentsItemIndex(customVector2);
-                if (entity.Count == 0)
+                var entity = _contexts.game.GetEntitiesWithGameComponentsItemIndex(customVector2).ToArray();
+                if (entity.Length == 0)
                 {
                     row = i;
                 }

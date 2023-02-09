@@ -42,9 +42,9 @@ namespace _04.Game.System
                     customVector2.x = x;
                     customVector2.y = y;
                     if (RandomBlocker())
-                        CreateService.Instance.CreateBloker(customVector2, ResPath.Blocker);
+                        CreateService.Instance.CreateBloker(customVector2);
                     else
-                        CreateService.Instance.CreateBall(customVector2, RandomPathService.Instance.RandomPath());
+                        CreateService.Instance.CreateBall(customVector2);
                 }
             }
         }

@@ -12,6 +12,8 @@ namespace _04.Game.Views
         {
             base.Link(entity, context);
             _gameEntity.AddGameComponentsItemIndexListener(this);
+            transform.position = new Vector3(_gameEntity.gameComponentsItemIndex.Vector2.x,
+                Contexts.sharedInstance.game.gameComponentsGameBoard.rows);
         }
 
         public void OnGameComponentsItemIndex(GameEntity entity, CustomVector2 vector2)

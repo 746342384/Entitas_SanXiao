@@ -46,8 +46,6 @@ namespace Game.System
                 }
                 else
                 {
-                    Debug.Log($"click {click.x} {click.y}");
-                    Debug.Log($"lastComponent {_lastComponent.x} {_lastComponent.y}");
                     if (click.x == _lastComponent.x - 1 && click.y == _lastComponent.y ||
                         click.x == _lastComponent.x + 1 && click.y == _lastComponent.y ||
                         click.y == _lastComponent.y - 1 && click.x == _lastComponent.x ||

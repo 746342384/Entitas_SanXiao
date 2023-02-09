@@ -1,3 +1,5 @@
+using Game.Const;
+
 namespace _04.Game.Service
 {
     public class CreateService
@@ -22,23 +24,23 @@ namespace _04.Game.Service
             return entity;
         }
 
-        public GameEntity CreateBall(CustomVector2 vector2, string path)
+        public GameEntity CreateBall(CustomVector2 vector2)
         {
             var entity = _contexts.game.CreateEntity();
             entity.isGameComponentsGameBoardItem = true;
             entity.isGameComponentsMoveable = true;
             entity.AddGameComponentsItemIndex(vector2);
-            entity.AddGameComponentsLoadPrefab(path);
+            entity.AddGameComponentsLoadPrefab(RandomPathService.Instance.RandomPath());
             return entity;
         }
 
-        public GameEntity CreateBloker(CustomVector2 vector2, string path)
+        public GameEntity CreateBloker(CustomVector2 vector2)
         {
             var entity = _contexts.game.CreateEntity();
             entity.isGameComponentsGameBoardItem = true;
             entity.isGameComponentsMoveable = false;
             entity.AddGameComponentsItemIndex(vector2);
-            entity.AddGameComponentsLoadPrefab(path);
+            entity.AddGameComponentsLoadPrefab(ResPath.Blocker);
             return entity;
         }
     }

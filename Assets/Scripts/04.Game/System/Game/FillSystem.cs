@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _04.Game.Service;
 using Entitas;
 
 namespace _04.Game.System.Game
@@ -27,9 +28,11 @@ namespace _04.Game.System.Game
             var gameBoard = _context.game.gameComponentsGameBoard;
             for (var column = 0; column < gameBoard.columns; column++)
             {
-                for (var row = 0; row < gameBoard.rows; row++)
+                var pos = new CustomVector2(column, gameBoard.rows + 1);
+                var rowPosMin = GetEmptyItemService.Instance.GetNextEmptyRow(pos);
+                for (var row = rowPosMin; row < gameBoard.rows; row++)
                 {
-                    
+                    CreateService.Instance.CreateBall(new CustomVector2(column, row));
                 }
             }
         }
