@@ -20,6 +20,12 @@ namespace Game.Controller
             Add(new FallSystem(contexts));
             Add(new DestroySystem(contexts));
             Add(new FillSystem(contexts));
+            Add(new JudgeFormationSystem(contexts));
+            Add(new ChangeItemSpriteSystem(contexts));
+            Add(new EliminateSameColorSystem(contexts));
+            Add(new EliminateHorizontalSystem(contexts));
+            Add(new EliminateVerticalSystem(contexts));
+            Add(new EliminateExplodeSystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)

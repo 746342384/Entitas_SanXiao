@@ -31,6 +31,7 @@ namespace _04.Game.Service
             entity.isGameComponentsMoveable = true;
             entity.AddGameComponentsItemIndex(vector2);
             entity.AddGameComponentsLoadPrefab(RandomPathService.Instance.RandomPath());
+            entity.AddGameComponentsItemEffectState(ItemEffectName.NONE);
             return entity;
         }
 

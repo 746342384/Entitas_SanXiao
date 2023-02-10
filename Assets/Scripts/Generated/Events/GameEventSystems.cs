@@ -11,6 +11,7 @@ public sealed class GameEventSystems : Feature {
     public GameEventSystems(Contexts contexts) {
         Add(new GameComponentsDestroyEventSystem(contexts)); // priority: 0
         Add(new GameComponentsAnyLoadPrefabEventSystem(contexts)); // priority: 0
+        Add(new GameComponentsLoadSpriteEventSystem(contexts)); // priority: 0
         Add(new MultiReactiveAnyNameEventSystem(contexts)); // priority: 0
         Add(new GameComponentsItemIndexEventSystem(contexts)); // priority: 1
     }

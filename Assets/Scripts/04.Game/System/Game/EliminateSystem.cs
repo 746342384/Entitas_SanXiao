@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using Entitas;
+using Game.Const;
 
 namespace Game.System.Game
 {
+    /// <summary>
+    /// 消除系统
+    /// </summary>
     public class EliminateSystem : ReactiveSystem<GameEntity>
     {
         public EliminateSystem(Contexts context) : base(context.game)
@@ -37,7 +41,8 @@ namespace Game.System.Game
             var sameEntities = new List<IEntity>();
             foreach (var gameEntity in entities)
             {
-                sameEntities.Add(gameEntity);
+                if (gameEntity.gameComponentsItemEffectState.State == ItemEffectName.NONE)
+                    sameEntities.Add(gameEntity);
 
                 var up = gameEntity.gameComponentsDetectionSameItem.UpEntities.Count;
                 var down = gameEntity.gameComponentsDetectionSameItem.DownEntities.Count;

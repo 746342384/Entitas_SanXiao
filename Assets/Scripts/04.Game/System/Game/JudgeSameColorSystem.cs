@@ -24,7 +24,14 @@ namespace Game.System.Game
             foreach (var gameEntity in entities)
             {
                 var isMeet = IsMeetCondition(gameEntity);
-                gameEntity.ReplaceGameComponentsEliminate(isMeet);
+                if (isMeet)
+                {
+                    gameEntity.isGameComponentsJudgeFormation = true;
+                }
+                else
+                {
+                    gameEntity.ReplaceGameComponentsEliminate(false);
+                }
             }
         }
 

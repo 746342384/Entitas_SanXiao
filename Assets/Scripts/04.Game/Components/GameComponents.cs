@@ -89,4 +89,16 @@ namespace Game.Components
     {
         public bool canEliminate;
     }
+
+    [Game]
+    public class ItemEffectState : IComponent
+    {
+        public ItemEffectName State;
+    }
+
+    [Game, Event(EventTarget.Self)]
+    public class LoadSprite : IComponent
+    {
+        public string name;
+    }
 }
