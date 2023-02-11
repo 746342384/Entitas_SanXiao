@@ -22,7 +22,7 @@ namespace _04.Game.System.Game
         protected override bool Filter(GameEntity entity)
         {
             return entity.hasGameComponentsItemEffectState &&
-                   entity.gameComponentsItemEffectState.State == ItemEffectName.ELIMINATE_SAME_COLOR;
+                   entity.gameComponentsItemEffectState.State == ItemEffectName.EXPLODE;
         }
 
         protected override void Execute(List<GameEntity> entities)

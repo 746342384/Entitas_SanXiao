@@ -11,7 +11,8 @@ namespace Game.Const
         public const string VerticalPostfix = "_1";
         public const string ExplodePostfix = "_1";
         public const string SpritesPath = "Sprites/";
-        public static string ConfigPath = UnityEngine.Application.streamingAssetsPath + "/Config/";
-        public static string DataPath = ConfigPath + "Data";
+        public static readonly string ConfigPath = UnityEngine.Application.streamingAssetsPath + "/Config/";
+        public static readonly string DataPath = ConfigPath + "Data.json";
+        public const string AudioPath = "Audio/";
     }
 }

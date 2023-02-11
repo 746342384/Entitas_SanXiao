@@ -8,44 +8,51 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int GameComponentsDestroy = 0;
-    public const int GameComponentsDetectionSameItem = 1;
-    public const int GameComponentsEliminate = 2;
-    public const int GameComponentsExchangeComplete = 3;
-    public const int GameComponentsExchangeComponemt = 4;
-    public const int GameComponentsGameBoard = 5;
-    public const int GameComponentsGameBoardItem = 6;
-    public const int GameComponentsGetSameColor = 7;
-    public const int GameComponentsItemEffectState = 8;
-    public const int GameComponentsItemIndex = 9;
-    public const int GameComponentsJudgeFormation = 10;
-    public const int GameComponentsLoadPrefab = 11;
-    public const int GameComponentsLoadSprite = 12;
-    public const int GameComponentsMoveable = 13;
-    public const int GameComponentsAnyLoadPrefabListener = 14;
-    public const int GameComponentsDestroyListener = 15;
-    public const int GameComponentsItemIndexListener = 16;
-    public const int GameComponentsLoadSpriteListener = 17;
-    public const int InterationExampleDirection = 18;
-    public const int InterationExampleMoveComplete = 19;
-    public const int InterationExampleMove = 20;
-    public const int InterationExamplePosition = 21;
-    public const int InterationExampleSprite = 22;
-    public const int InterationExampleView = 23;
-    public const int Log = 24;
-    public const int MultiReactiveDestroy = 25;
-    public const int MultiReactiveName = 26;
-    public const int MultiReactiveView = 27;
-    public const int MultiReactiveAnyNameListener = 28;
+    public const int GameComponentsAudio = 0;
+    public const int GameComponentsDestroy = 1;
+    public const int GameComponentsDetectionSameItem = 2;
+    public const int GameComponentsEliminate = 3;
+    public const int GameComponentsExchangeComplete = 4;
+    public const int GameComponentsExchangeComponemt = 5;
+    public const int GameComponentsFall = 6;
+    public const int GameComponentsGameBoard = 7;
+    public const int GameComponentsGameBoardItem = 8;
+    public const int GameComponentsGetSameColor = 9;
+    public const int GameComponentsItemEffectState = 10;
+    public const int GameComponentsItemIndex = 11;
+    public const int GameComponentsJudgeFormation = 12;
+    public const int GameComponentsLoadPrefab = 13;
+    public const int GameComponentsLoadSprite = 14;
+    public const int GameComponentsMoveable = 15;
+    public const int GameComponentsScroe = 16;
+    public const int GameComponentsAnyLoadPrefabListener = 17;
+    public const int GameComponentsAnyScroeListener = 18;
+    public const int GameComponentsAudioListener = 19;
+    public const int GameComponentsDestroyListener = 20;
+    public const int GameComponentsItemIndexListener = 21;
+    public const int GameComponentsLoadSpriteListener = 22;
+    public const int InterationExampleDirection = 23;
+    public const int InterationExampleMoveComplete = 24;
+    public const int InterationExampleMove = 25;
+    public const int InterationExamplePosition = 26;
+    public const int InterationExampleSprite = 27;
+    public const int InterationExampleView = 28;
+    public const int Log = 29;
+    public const int MultiReactiveDestroy = 30;
+    public const int MultiReactiveName = 31;
+    public const int MultiReactiveView = 32;
+    public const int MultiReactiveAnyNameListener = 33;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 34;
 
     public static readonly string[] componentNames = {
+        "GameComponentsAudio",
         "GameComponentsDestroy",
         "GameComponentsDetectionSameItem",
         "GameComponentsEliminate",
         "GameComponentsExchangeComplete",
         "GameComponentsExchangeComponemt",
+        "GameComponentsFall",
         "GameComponentsGameBoard",
         "GameComponentsGameBoardItem",
         "GameComponentsGetSameColor",
@@ -55,7 +62,10 @@ public static class GameComponentsLookup {
         "GameComponentsLoadPrefab",
         "GameComponentsLoadSprite",
         "GameComponentsMoveable",
+        "GameComponentsScroe",
         "GameComponentsAnyLoadPrefabListener",
+        "GameComponentsAnyScroeListener",
+        "GameComponentsAudioListener",
         "GameComponentsDestroyListener",
         "GameComponentsItemIndexListener",
         "GameComponentsLoadSpriteListener",
@@ -73,11 +83,13 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Game.Components.Audio),
         typeof(Game.Components.DestroyComponent),
         typeof(Game.Components.DetectionSameItem),
         typeof(Game.Components.Eliminate),
         typeof(Game.Components.ExchangeComplete),
         typeof(Game.Components.ExchangeComponemt),
+        typeof(Game.Components.Fall),
         typeof(Game.Components.GameBoardComponent),
         typeof(Game.Components.GameBoardItem),
         typeof(Game.Components.GetSameColor),
@@ -87,7 +99,10 @@ public static class GameComponentsLookup {
         typeof(Game.Components.LoadPrefabComponent),
         typeof(Game.Components.LoadSprite),
         typeof(Game.Components.MoveableComponent),
+        typeof(Game.Components.Scroe),
         typeof(GameComponentsAnyLoadPrefabListenerComponent),
+        typeof(GameComponentsAnyScroeListenerComponent),
+        typeof(GameComponentsAudioListenerComponent),
         typeof(GameComponentsDestroyListenerComponent),
         typeof(GameComponentsItemIndexListenerComponent),
         typeof(GameComponentsLoadSpriteListenerComponent),

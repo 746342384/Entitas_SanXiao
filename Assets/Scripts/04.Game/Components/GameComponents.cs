@@ -101,4 +101,22 @@ namespace Game.Components
     {
         public string name;
     }
+
+    [Game, Unique, Event(EventTarget.Any)]
+    public class Scroe : IComponent
+    {
+        public int score;
+    }
+
+    [Game, Event(EventTarget.Self)]
+    public class Audio : IComponent
+    {
+        public string path;
+    }
+
+    [Game]
+    public class Fall : IComponent
+    {
+        public FallState State;
+    }
 }

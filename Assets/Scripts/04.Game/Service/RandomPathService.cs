@@ -13,5 +13,10 @@ namespace _04.Game.Service
             var index = Random.Range(0, 6);
             return $"{ResPath.Item}{index}";
         }
+
+        public string RandomPath(int index)
+        {
+            return $"{ResPath.Item}{index}";
+        }
     }
 }

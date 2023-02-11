@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _04.Game.Model;
 using _04.Game.Service;
 using Entitas;
 using Game.Const;
@@ -32,21 +33,36 @@ namespace _04.Game.System
         public void Initialize()
         {
             var gameBoard = CreateService.Instance.CreateGameBoard().gameComponentsGameBoard;
-            var columns = gameBoard.columns;
-            var rows = gameBoard.rows;
             var customVector2 = new CustomVector2();
-            for (var x = 0; x < columns; x++)
+            var dataList = GetDataList();
+            for (var row = 0; row < gameBoard.rows; row++)
             {
-                for (var y = 0; y < rows; y++)
+                for (var index = 0; index < dataList[row].Count; index++)
                 {
-                    customVector2.x = x;
-                    customVector2.y = y;
-                    if (RandomBlocker())
-                        CreateService.Instance.CreateBloker(customVector2);
-                    else
-                        CreateService.Instance.CreateBall(customVector2);
+                    customVector2.x = index;
+                    customVector2.y = row;
+                    CreateService.Instance.CreateBall(dataList[row][index], customVector2);
                 }
             }
+        }
+
+        private List<List<int>> GetDataList()
+        {
+            var instanceDataModel = Models.Instance.DataModel;
+            var config = instanceDataModel.Level[0];
+            var list = new List<List<int>>
+            {
+                config.row_0,
+                config.row_1,
+                config.row_2,
+                config.row_3,
+                config.row_4,
+                config.row_5,
+                config.row_6,
+                config.row_7,
+                config.row_8
+            };
+            return list;
         }
 
         /// <summary>

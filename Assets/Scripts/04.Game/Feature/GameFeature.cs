@@ -26,6 +26,10 @@ namespace Game.Controller
             Add(new EliminateHorizontalSystem(contexts));
             Add(new EliminateVerticalSystem(contexts));
             Add(new EliminateExplodeSystem(contexts));
+            Add(new ScoreSystem(contexts));
+            Add(new EliminateAudioSystem(contexts));
+            Add(new ExchangeAudioSystem(contexts));
+            Add(new FallAudioSystem(contexts));
         }
 
         public sealed override Systems Add(ISystem system)

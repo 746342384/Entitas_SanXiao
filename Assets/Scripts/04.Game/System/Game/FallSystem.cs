@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _04.Game.Service;
 using Entitas;
+using Game.Const;
 
 namespace Game.System.Game
 {
@@ -49,6 +50,7 @@ namespace Game.System.Game
 
             if (nextEmptyRow < vector2.y)
             {
+                entity.ReplaceGameComponentsFall(FallState.FALL);
                 var customVector2 = new CustomVector2(vector2.x, nextEmptyRow);
                 entity.ReplaceGameComponentsItemIndex(customVector2);
             }

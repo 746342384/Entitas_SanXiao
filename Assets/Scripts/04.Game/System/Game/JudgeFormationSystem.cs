@@ -28,19 +28,31 @@ namespace Game.System.Game
         {
             foreach (var gameEntity in entities)
             {
-                var component = gameEntity.gameComponentsDetectionSameItem;
-                if (JudgeEliminateAll(component))
-                    gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.ELIMINATE_SAME_COLOR);
-                else if (JudgeEliminateHorizontal(component))
-                    gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.ELIMINATE_HORIZONTAL);
-                else if (JudgeEliminateVertical(component))
-                    gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.ELIMINATE_VERTICAL);
-                else if (JudgeExplode(component))
-                    gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.EXPLODE);
+                if (gameEntity.gameComponentsItemEffectState.State == ItemEffectName.NONE)
+                {
+                    JudgeItem(gameEntity);
+                }
+                else
+                {
+                    gameEntity.isGameComponentsJudgeFormation = false;
+                }
 
                 gameEntity.ReplaceGameComponentsEliminate(true);
-                gameEntity.isGameComponentsJudgeFormation = false;
             }
+        }
+
+        private void JudgeItem(GameEntity gameEntity)
+        {
+            var component = gameEntity.gameComponentsDetectionSameItem;
+            if (JudgeEliminateAll(component))
+                gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.ELIMINATE_SAME_COLOR);
+            else if (JudgeEliminateHorizontal(component))
+                gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.ELIMINATE_HORIZONTAL);
+            else if (JudgeEliminateVertical(component))
+                gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.ELIMINATE_VERTICAL);
+            else if (JudgeExplode(component))
+                gameEntity.ReplaceGameComponentsItemEffectState(ItemEffectName.EXPLODE);
+            else gameEntity.isGameComponentsJudgeFormation = false;
         }
 
         private bool JudgeEliminateAll(DetectionSameItem listComponent)

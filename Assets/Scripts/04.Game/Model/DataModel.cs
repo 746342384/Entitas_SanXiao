@@ -9,6 +9,7 @@ namespace _04.Game.Model
         public List<Item> Level;
     }
 
+    [Serializable]
     public class Item
     {
         public List<int> row_0;

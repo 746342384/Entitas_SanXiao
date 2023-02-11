@@ -44,5 +44,17 @@ namespace _04.Game.Service
             entity.AddGameComponentsLoadPrefab(ResPath.Blocker);
             return entity;
         }
+        
+        public GameEntity CreateBall(int index,CustomVector2 vector2)
+        {
+            var entity = _contexts.game.CreateEntity();
+            entity.isGameComponentsGameBoardItem = true;
+            entity.isGameComponentsMoveable = true;
+            entity.ReplaceGameComponentsFall(FallState.FALL);
+            entity.AddGameComponentsItemIndex(vector2);
+            entity.AddGameComponentsLoadPrefab(RandomPathService.Instance.RandomPath(index));
+            entity.AddGameComponentsItemEffectState(ItemEffectName.NONE);
+            return entity;
+        }
     }
 }

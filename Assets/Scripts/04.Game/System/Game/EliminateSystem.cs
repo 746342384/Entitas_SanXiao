@@ -41,8 +41,14 @@ namespace Game.System.Game
             var sameEntities = new List<IEntity>();
             foreach (var gameEntity in entities)
             {
-                if (gameEntity.gameComponentsItemEffectState.State == ItemEffectName.NONE)
+                if (!gameEntity.isGameComponentsJudgeFormation)
+                {
                     sameEntities.Add(gameEntity);
+                }
+                else
+                {
+                    gameEntity.isGameComponentsJudgeFormation = false;
+                }
 
                 var up = gameEntity.gameComponentsDetectionSameItem.UpEntities.Count;
                 var down = gameEntity.gameComponentsDetectionSameItem.DownEntities.Count;

@@ -1,4 +1,4 @@
-using _02.InterationExample;
+using _04.Game.Model;
 using _04.Game.Service;
 using Entitas;
 using UnityEngine;
@@ -10,10 +10,12 @@ namespace Game.Controller
         private Contexts _contexts;
         private Systems _systems;
         private Services _services;
+        private Models _models;
 
         private void Start()
         {
             _contexts = Contexts.sharedInstance;
+            _models = new Models();
             _services = new Services(_contexts, transform);
             _systems = GetSystems();
             _systems.Initialize();
